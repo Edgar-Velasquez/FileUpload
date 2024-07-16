@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Uploaded Images</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+
+<h1>Uploaded Images</h1>
+
+<ul>
+    <li th:each="file : ${files}">
+        <img th:src="@{'/uploads/' + ${file}}" th:alt="${file}" style="max-width: 200px; max-height: 200px;"/>
+        <p th:text="${file}"></p>
+    </li>
+</ul>
+
+<a href="/">Upload another file</a>
+
+</body>
+</html>
